@@ -1,5 +1,5 @@
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    animation.runImageAnimation(
+    characterAnimations.loopFrames(
     PLAYER_1,
     [img`
         . . . . . . f f f f . . . . . . 
@@ -71,11 +71,11 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . . . . . f f f . . . . 
         `],
     500,
-    false
+    characterAnimations.rule(Predicate.MovingUp)
     )
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    animation.runImageAnimation(
+    characterAnimations.loopFrames(
     PLAYER_1,
     [img`
         . . . . f f f f f f . . . . . . 
@@ -147,11 +147,11 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . f f f . . . f f . . . . . 
         `],
     500,
-    false
+    characterAnimations.rule(Predicate.MovingLeft)
     )
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    animation.runImageAnimation(
+    characterAnimations.loopFrames(
     PLAYER_1,
     [img`
         . . . . . . f f f f f f . . . . 
@@ -223,11 +223,11 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . f f . . . f f f . . . 
         `],
     500,
-    false
+    characterAnimations.rule(Predicate.MovingRight)
     )
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    animation.runImageAnimation(
+    characterAnimations.loopFrames(
     PLAYER_1,
     [img`
         . . . . . . f f f f . . . . . . 
@@ -299,14 +299,10 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . . . . . f f f . . . . 
         `],
     500,
-    false
+    characterAnimations.rule(Predicate.MovingDown)
     )
 })
-scene.onOverlapTile(SpriteKind.Player, assets.tile`transparency16`, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`level2`)
-})
 let PLAYER_1: Sprite = null
-tiles.setCurrentTilemap(tilemap`level1`)
 PLAYER_1 = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
