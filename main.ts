@@ -1,5 +1,10 @@
+enum ActionKind {
+    Walking,
+    Idle,
+    Jumping
+}
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenNorth, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`level2`)
+	
 })
 tiles.setCurrentTilemap(tilemap`level1`)
 let PLAYER_1 = sprites.create(img`
