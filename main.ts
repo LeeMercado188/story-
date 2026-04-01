@@ -306,6 +306,10 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     characterAnimations.rule(Predicate.MovingDown)
     )
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenNorth, function (sprite, location) {
+    tiles.setCurrentTilemap(tilemap`level6`)
+    tiles.placeOnTile(PLAYER_1, tiles.getTileLocation(5, 14))
+})
 let PLAYER_1: Sprite = null
 PLAYER_1 = sprites.create(img`
     . . . . . . f f f f . . . . . . 
