@@ -150,10 +150,6 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     characterAnimations.rule(Predicate.MovingLeft)
     )
 })
-scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorClosedNorth, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`level4`)
-    tiles.placeOnTile(PLAYER_1, tiles.getTileLocation(3, 13))
-})
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     characterAnimations.loopFrames(
     PLAYER_1,
@@ -306,9 +302,13 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     characterAnimations.rule(Predicate.MovingDown)
     )
 })
-scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenNorth, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`level6`)
+scene.onOverlapTile(SpriteKind.Player, assets.tile`transparency16`, function (sprite, location) {
+    tiles.setCurrentTilemap(tilemap`level3`)
     tiles.placeOnTile(PLAYER_1, tiles.getTileLocation(5, 14))
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenNorth, function (sprite, location) {
+    tiles.setCurrentTilemap(tilemap`level2`)
+    tiles.placeOnTile(PLAYER_1, tiles.getTileLocation(3, 13))
 })
 let PLAYER_1: Sprite = null
 PLAYER_1 = sprites.create(img`
@@ -331,4 +331,4 @@ PLAYER_1 = sprites.create(img`
     `, SpriteKind.Player)
 scene.cameraFollowSprite(PLAYER_1)
 controller.moveSprite(PLAYER_1)
-tiles.setCurrentTilemap(tilemap`level3`)
+tiles.setCurrentTilemap(tilemap`level1`)
