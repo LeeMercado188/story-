@@ -150,6 +150,10 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     characterAnimations.rule(Predicate.MovingLeft)
     )
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorClosedNorth, function (sprite, location) {
+    tiles.setCurrentTilemap(tilemap`level4`)
+    tiles.placeOnTile(PLAYER_1, tiles.getTileLocation(3, 13))
+})
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     characterAnimations.loopFrames(
     PLAYER_1,
