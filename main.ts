@@ -234,6 +234,9 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     characterAnimations.rule(Predicate.MovingRight)
     )
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    people.sayText("Excuse me", 500, false)
+})
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     characterAnimations.loopFrames(
     PLAYER_1,
@@ -309,13 +312,6 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     100,
     characterAnimations.rule(Predicate.MovingDown)
     )
-})
-scene.onOverlapTile(SpriteKind.Player, assets.tile`transparency16`, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`level3`)
-    tiles.placeOnTile(PLAYER_1, tiles.getTileLocation(5, 14))
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.people, function (sprite, otherSprite) {
-    people.sayText("Excuse me")
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenNorth, function (sprite, location) {
     tiles.setCurrentTilemap(tilemap`level2`)
@@ -600,7 +596,7 @@ let myMenu = miniMenu.createMenu(
 miniMenu.createMenuItem("PLay")
 )
 myMenu.setPosition(80, 90)
-miniMenu.setMenuStyleProperty(myMenu, miniMenu.MenuStyleProperty.BackgroundColor, 2)
+miniMenu.setMenuStyleProperty(myMenu, miniMenu.MenuStyleProperty.BorderColor, 5)
 let Main_Menu = true
 let not_MainManu = false
 miniMenu.onButtonPressed(myMenu, miniMenu.Button.A, function (selection, selectedIndex) {
