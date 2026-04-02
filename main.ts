@@ -1,3 +1,4 @@
+scene.setBackgroundColor(2)
 namespace SpriteKind {
     export const people = SpriteKind.create()
 }
