@@ -4,6 +4,12 @@
         "mimeType": "image/x-mkcd-f4",
         "tilemapTile": true
     },
+    "tile1": {
+        "data": "hwQQABAAAAD////////v/v//////////////////7u/////////u7////////////////////+/////////+7v/////////u/////////+/////////v7v///////+/+/////////u//////////7////////+/v////////7v7////////u/g==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true,
+        "displayName": "myTile"
+    },
     "level1": {
         "id": "level1",
         "mimeType": "application/mkcd-tilemap",

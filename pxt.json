@@ -6,6 +6,8 @@
         "arcade-tile-util": "github:microsoft/arcade-tile-util#v1.2.0",
         "arcade-mini-menu": "github:riknoll/arcade-mini-menu#v0.1.0",
         "animation": "*",
+        "arcade-character-animations": "github:microsoft/arcade-character-animations#v0.1.0",
+        "darts": "*"
         "darts": "*",
         "arcade-character-animations": "github:microsoft/arcade-character-animations#v0.1.0"
     },
